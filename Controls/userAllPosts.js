@@ -5,7 +5,7 @@ const userPostRouter=express.Router()
 
 
 
-userPostRouter.get("/employees",async(req,res)=>{
+userPostRouter.get("/",async(req,res)=>{
     const {authorId}=req.body
     console.log(req.body)
 try{
@@ -15,7 +15,7 @@ res.status(200).json({msg:data})}catch(err){
 }
 }
 )
-userPostRouter.post("/post",async(req,res)=>{
+userPostRouter.post("/employees",async(req,res)=>{
     const {firsname,lastname,email,department,salary}=req.body
     // console.log(req.body)
     try{
