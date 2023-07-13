@@ -29,7 +29,7 @@ userPostRouter.post("/employees",async(req,res)=>{
 })
 userPostRouter.get("/employess/:id",async(req,res)=>{
 const {authorId}=req.body
-const id=req.params
+const {id}=req.params
 
 try{
     const data=await userpostModel.findOne({"_id":id})
