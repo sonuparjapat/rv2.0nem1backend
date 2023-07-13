@@ -32,7 +32,7 @@ userRouter.post("/login",async(req,res)=>{
             bcrypt.compare(password,data.password, function(err, result) {
                if(result){
                 var token = jwt.sign({authorId:data._id }, 'masai', { expiresIn: 60 * 60 });
-                res.status(200).json({msg:"LOGIN SUCCESSFULLY","token":token,"username":data.name,"useremail":data.email})
+                res.status(200).json({msg:"LOGIN SUCCESSFULLY","token":token,"useremail":data.email})
                }else{
                 res.status(200).json({msg:"Password Mismatch"})
                }
