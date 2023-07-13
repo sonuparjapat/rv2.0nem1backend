@@ -27,6 +27,19 @@ userPostRouter.post("/employees",async(req,res)=>{
     }
 
 })
+userPostRouter.get("/employess/:id",async(req,res)=>{
+const {authorId}=req.body
+const id=req.params
+
+try{
+    const data=await userpostModel.findOne({"_id":id})
+    res.status(200).json({"msg":data})
+}catch(err){
+    res.status(400).json({msg:"something going wrong"})
+}
+
+
+})
 userPostRouter.delete("/delete/:id",async(req,res)=>{
 const {id}=req.params
 const data=await userpostModel.findOne({"_id":id})
