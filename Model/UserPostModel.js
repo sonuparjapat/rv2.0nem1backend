@@ -5,7 +5,8 @@ const userSchema=mongoose.Schema({
     "lastname":String,
     "email":String,
     "department":{type:String, enum : ['Tech',"Marketing","Operations"]},
-    "salary":Number
+    "salary":Number,
+    "authorId":String
 
 })
 const userpostModel=mongoose.model("userpostmodel",userSchema)
