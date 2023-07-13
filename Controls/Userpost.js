@@ -34,7 +34,7 @@ userRouter.post("/login",async(req,res)=>{
                 var token = jwt.sign({authorId:data._id }, 'masai', { expiresIn: 60 * 60 });
                 res.status(200).json({msg:"LOGIN SUCCESSFULLY","token":token,"useremail":data.email})
                }else{
-                res.status(200).json({msg:"Password Mismatch"})
+                res.status(400).json({msg:"Password Mismatch"})
                }
             });
 
